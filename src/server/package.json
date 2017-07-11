@@ -1,0 +1,23 @@
+{
+  "name": "slimjim",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -p 3000"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "core-js": "^2.4.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.2",
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0",
+    "rxjs": "^5.1.0",
+    "serve-favicon": "^2.4.2",
+    "zone.js": "^0.7.6"
+  },
+  "devDependencies": {
+  }
+}
