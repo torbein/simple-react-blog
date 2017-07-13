@@ -20,6 +20,7 @@ export default class Nav extends React.Component {
         const featuredClass = location.pathname === "/" ? "active" : "";
         const postsClass = location.pathname.match(/^\/posts/) ? "active" : "";
         const settingsClass = location.pathname.match(/^\/settings/) ? "active" : "";
+        const adminClass = location.pathname.match(/^\/settings/) ? "active" : "";
         const navClass = this.state.collapsed ? "collapse" : "";
         return(
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,6 +44,9 @@ export default class Nav extends React.Component {
                                 </li>
                                 <li class={settingsClass}>
                                     <Link to="/settings" onClick={this.toggleCollapse.bind(this)}>Settings</Link>
+                                </li>
+                                <li class={adminClass}>
+                                    <Link to="/admin" onClick={this.toggleCollapse.bind(this)}>Admin</Link>
                                 </li>
                             </ul>
                         </div>

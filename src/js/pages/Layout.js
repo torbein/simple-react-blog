@@ -6,6 +6,7 @@ import Footer from "../components/layout/Footer"
 import Settings from "./Settings";
 import Posts from "./Posts";
 import Featured from "./Featured";
+import Admin from "./Admin";
 
 export default class Layout extends React.Component {
 

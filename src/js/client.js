@@ -10,6 +10,7 @@ import Footer from "./components/layout/Footer"
 import Settings from "./Pages/Settings";
 import Posts from "./pages/Posts";
 import Featured from "./pages/Featured";
+import Admin from "./pages/Admin";
 
 
 
@@ -22,6 +23,7 @@ ReactDOM.render(
                 <Layout>
                     <Route path="/posts" component={Posts} />
                     <Route path="/settings" component={Settings} />
+                    <Route path="/admin" component={Admin} />
                     <Route exact path="/" component={Featured} />
                 </Layout>
         </Router>

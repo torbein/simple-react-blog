@@ -8,7 +8,7 @@ import promise from "redux-promise";
 import logger from "redux-logger";
 
 
-const middleware = applyMiddleware( thunk, logger)
+const middleware = applyMiddleware(thunk, logger)
 const store = createStore(postsReducer, middleware);
 
 
