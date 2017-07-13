@@ -7,11 +7,6 @@ import Settings from "./Settings";
 import Posts from "./Posts";
 import Featured from "./Featured";
 
-@connect((store) => {
-    return {
-        store: store
-    }
-})
 export default class Layout extends React.Component {
 
     constructor() {

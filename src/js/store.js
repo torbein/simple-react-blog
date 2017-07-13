@@ -10,6 +10,6 @@ import logger from "redux-logger";
 
 const middleware = applyMiddleware( thunk, logger)
 const store = createStore(postsReducer, middleware);
-export const history = syncHistoryWithStore(browserHistory, store);
+
 
 export default store;

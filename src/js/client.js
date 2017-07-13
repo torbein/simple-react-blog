@@ -18,7 +18,7 @@ const app = document.getElementById('app');
 ReactDOM.render(
 
     <Provider store = {store}>
-        <Router history={history}>
+        <Router history={browserHistory}>
                 <Layout>
                     <Route path="/posts" component={Posts} />
                     <Route path="/settings" component={Settings} />

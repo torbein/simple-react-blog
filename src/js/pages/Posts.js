@@ -10,8 +10,13 @@ import * as PostAction from "../actions/posts-actions.js";
 })
 export default class Posts extends React.Component {
 
+    constructor() {
+        super();
+        this.fetchPosts = this.fetchPosts.bind(this);
+    }
+
     componentWillMount(){
-        fetchPosts();
+        this.fetchPosts();
     }
 
     fetchPosts() {
@@ -22,7 +27,7 @@ export default class Posts extends React.Component {
     render() {
         const { posts } = this.props;
 
-        const mappedPosts = posts.map(post => <li>post.title</li>)
+        const mappedPosts = posts.map(post => <li>{post.title}</li>)
 
         return(
             <div>

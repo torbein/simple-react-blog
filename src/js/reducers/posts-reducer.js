@@ -38,5 +38,7 @@ export default function PostsReducer(state={
                 fetched: true,
                 posts: action.payload}
         }
+        default:
+            return state;
     }
 };
