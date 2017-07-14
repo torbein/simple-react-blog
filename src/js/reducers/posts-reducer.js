@@ -1,9 +1,8 @@
-export default function PostsReducer(state={
+const initialState = {
     posts: [],
     post: {
-        _id: null,
         title: null,
-        body: null,
+        bodu: null,
         author: null,
         created_at: null,
         modifed_at: null
@@ -11,54 +10,36 @@ export default function PostsReducer(state={
     fetching: false,
     fetched: false,
     error: null,
+};
 
-}, action) {
+export default function PostsReducer(state=initialState, action) {
 
     switch (action.type) {
+
         case "FETCH_POSTS": {
-            return {...state, fetching: true}
+            return { ...state, fetching: true }
         }
-        case "FETCH_POSTS_SUCCESS": {
-            return {...state,
-                fetching: false,
-                fetched: true,
-                posts: action.payload
-            }
-        }
-        case "CREATE_POST": {
-            return {...state, fetching: true}
-        }
-        case "CREATE_POST_SUCCESS": {
-            return {...state, fetching: false}
-        }
+
         case "MODIFY_POST": {
-            return {...state, fetching: true}
+            return { ...state, fetching: true }
         }
-        case "MODIFY_POST_SUCCESS": {
-            return {...state, fetching: false, fetched: true, post: action.payload}
-        }
+
         case "FETCH_POST": {
-            return {...state,
-                fetching: true,
-            }
+            return { ...state, fetching: true, fetched: true, post: action.payload }
         }
-        case "FETCH_POST_SUCCESS": {
-            return {...state,
-                fetching: false,
-                fetched: true,
-                post: action.payload,
-            }
-        }
-        
+
         case "DELETE_POST": {
-            return {...state, fetching: true}
+            return { ...state, fetching: true }
         }
-        case "DELETE_POST_SUCCESS": {
-            return {...state, fetching: false, fetched: true}
-        }
+
         case "POSTS_ERROR": {
-            return {...state, fetching: false, error: action.payload}
+            return { ...state, fetching: false, error: action.payload }
         }
+
+        case "FETCH_POSTS_SUCCESS": {
+            return { ...state, fetching: false, fetched: true, posts: action.payload }
+        }
+
         default:
             return state;
     }
