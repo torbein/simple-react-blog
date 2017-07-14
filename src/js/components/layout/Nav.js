@@ -20,7 +20,7 @@ export default class Nav extends React.Component {
         const featuredClass = location.pathname === "/" ? "active" : "";
         const postsClass = location.pathname.match(/^\/posts/) ? "active" : "";
         const settingsClass = location.pathname.match(/^\/settings/) ? "active" : "";
-        const adminClass = location.pathname.match(/^\/settings/) ? "active" : "";
+        const adminClass = location.pathname.match(/^\/admin/) ? "active" : "";
         const navClass = this.state.collapsed ? "collapse" : "";
         return(
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

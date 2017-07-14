@@ -47,7 +47,8 @@ router.post('/posts', (req,res) => {
 
 //Get specific post
 router.get('/posts/:id', (req,res) => {
-  Posts.findOne({post: req.body._id}, function(err, post) {
+  console.log(req.params.id)
+  Posts.findOne({_id: req.params.id}, function(err, post) {
     console.log("Looking for post")
     if(err){
       //error
@@ -65,14 +66,15 @@ router.get('/posts/:id', (req,res) => {
 router.put('/posts/:id', (req,res) => {
   console.log("Looking for post");
   console.log("req.body");
-  Posts.findOne({post: req.body._id}, function(err, post) {
+  Posts.findOne({_id: req.params.id}, function(err, post) {
     if(err) {
       return res.send(500, err);
     }
 
     console.log("Found post: " + post);
-    post.title = req.body.title;
-    post.body = req.body.body;
+    console.log(req.params)
+    post.title = req.params.title;
+    post.body = req.params.body;
     post.modifed_at = Date.now();
 
     post.save(function(err, post) {
@@ -89,7 +91,7 @@ router.delete('/posts/:id', (req,res) => {
   console.log("Attempting to delete post");
   console.log(req.body);
 
-  Posts.findOne({post: req.body._id}, function(err, post) {
+  Posts.findOne({_id: req.params.id}, function(err, post) {
     if(err) {
       return res.send(500, err);
     }

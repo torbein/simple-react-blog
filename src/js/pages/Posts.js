@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import * as PostAction from "../actions/posts-actions.js";
 
@@ -27,7 +28,15 @@ export default class Posts extends React.Component {
     render() {
         const { posts } = this.props;
 
-        const mappedPosts = posts.map(post => <li>{post.title}</li>)
+        console.log(posts);
+
+        const mappedPosts = posts.map(post => 
+            <div>
+                <li>
+                    <Link to={"/posts/" + post._id}>{post.title}
+                    </Link>
+                </li>
+            </div>)
 
         return(
             <div>

@@ -9,6 +9,7 @@ import Layout from "./pages/Layout";
 import Footer from "./components/layout/Footer"
 import Settings from "./Pages/Settings";
 import Posts from "./pages/Posts";
+import Post from "./pages/Post";
 import Featured from "./pages/Featured";
 import Admin from "./pages/Admin";
 
@@ -21,7 +22,8 @@ ReactDOM.render(
     <Provider store = {store}>
         <Router history={browserHistory}>
                 <Layout>
-                    <Route path="/posts" component={Posts} />
+                    <Route exact path="/posts" component={Posts} />
+                    <Route path="/posts/:id" component={Post} />
                     <Route path="/settings" component={Settings} />
                     <Route path="/admin" component={Admin} />
                     <Route exact path="/" component={Featured} />

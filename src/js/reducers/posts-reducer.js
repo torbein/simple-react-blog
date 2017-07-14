@@ -1,6 +1,7 @@
 export default function PostsReducer(state={
     posts: [],
     post: {
+        _id: null,
         title: null,
         body: null,
         author: null,
@@ -21,7 +22,8 @@ export default function PostsReducer(state={
             return {...state,
                 fetching: false,
                 fetched: true,
-                posts: action.payload}
+                posts: action.payload
+            }
         }
         case "CREATE_POST": {
             return {...state, fetching: true}
@@ -32,14 +34,27 @@ export default function PostsReducer(state={
         case "MODIFY_POST": {
             return {...state, fetching: true}
         }
+        case "MODIFY_POST_SUCCESS": {
+            return {...state, fetching: false, fetched: true, post: action.payload}
+        }
         case "FETCH_POST": {
             return {...state,
                 fetching: true,
-                fetched: true,
-                post: action.payload}
+            }
         }
+        case "FETCH_POST_SUCCESS": {
+            return {...state,
+                fetching: false,
+                fetched: true,
+                post: action.payload,
+            }
+        }
+        
         case "DELETE_POST": {
             return {...state, fetching: true}
+        }
+        case "DELETE_POST_SUCCESS": {
+            return {...state, fetching: false, fetched: true}
         }
         case "POSTS_ERROR": {
             return {...state, fetching: false, error: action.payload}

@@ -32,7 +32,10 @@ export default class Createpost extends React.Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-        this.setState({[name]: value, post: {title: event.target.value, body: event.target.value}});
+        this.setState({post: {
+            [name]: value
+        }});
+        console.log(this.state.post)
     }
 
     handleSubmit(event) {
@@ -52,13 +55,13 @@ export default class Createpost extends React.Component {
                     <div className="col-xs-12">
                         <label>
                             Title <br />
-                            <input name="title" type="text" value={this.state.value} onChange={this.handleChange} />
+                            <input name="title" type="text" value={this.state.post.title} onChange={this.handleChange} />
                         </label>
                     </div>
                     <div className="col-xs-12">
                         <label>
                             Content <br />
-                            <textarea name="content" type="text" value={this.state.value} onChange={this.handleChange} />
+                            <textarea name="body" type="text" value={this.state.post.body} onChange={this.handleChange} />
                         </label>
                     </div>
 
